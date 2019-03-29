@@ -1,0 +1,122 @@
+        /*这里是下拉框的长 宽*/
+        .jack-select ul{
+            max-height: 200px;
+            width: 150px;
+        }
+
+        /*这里是input框的长 宽*/
+        .jack-select-container{
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        /*这里是阴影颜色*/
+        .jack-select:hover .jack-select-container {
+            box-shadow: 0 0 10px #e8e8e8;
+        }
+
+        /*这里是列表hover 的背景色*/
+        .jack-select li:hover {
+            background-color: rgb(227, 239, 255);
+        }
+
+        .jack-select-container {
+            display: inline-block;
+            cursor: pointer;
+            transition: all .7s;
+            position: relative;
+            font-size: 14px;
+            color: #666;
+            padding-left: 10px;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .jack-select-icon {
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            border-right: 6px solid transparent;
+            border-left: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-top: 6px solid #666;
+            right: 7px;
+            top: 12px;
+            transition: all .5s;
+            transform: rotate(0deg);
+            transform-origin: 50% 25%;
+        }
+
+        .jack-select-rotate {
+            transform: rotate(180deg);
+        }
+
+        .jack-select {
+            display: inline-block;
+        }
+
+        .jack-select ul {
+            border: 1px solid #e8e8e8;
+            border-top: none;
+            padding: 0;
+            box-sizing: border-box;
+            margin: 0;
+            border-radius: 5px;
+            transform: scaleY(0);
+            transition: all 0.2s ease-out;
+            transform-origin: 0 0;
+            position: absolute;
+            z-index: 9999;
+            background: white;
+            overflow: auto;
+        }
+
+        .jack-select-scale {
+            transform: scaleY(1) !important;
+        }
+
+        .jack-select li {
+            list-style: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            color: #666;
+            transition: all .5s;
+            cursor: pointer;
+        }
+
+        .jack-select-option-disabled{
+            cursor:not-allowed !important;
+        }
+
+        .jack-select-option-disabled:hover{
+            background: white !important;
+        }
+
+        .jack-select-input {
+            cursor: pointer;
+            outline: none;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            padding-left: 10px;
+            border: 1px solid #e8e8e8;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        .jack-select ul::-webkit-scrollbar {
+            width: 7px;
+            height: 10px;
+        }
+
+        .jack-select ul::-webkit-scrollbar-thumb {
+            background-color: rgba(144, 147, 153, .3);
+            border-radius: 5px;
+        }
+        /*这里是滚动条的颜色*/
+        .jack-select ul::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(144, 147, 153, .5);
+        }

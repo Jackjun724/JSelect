@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../dist/JSelect.css">
+    <script type="text/javascript" src="../dist/JSelect.js"></script>
+    <script type="text/javascript" src="../../jquery-3.2.1.js"></script>
+</head>
+<body>
+<h1>下面这两个是被美化的组件</h1>
+<form action="/asd" method="get">
+    <select class="mySelect" name="test">
+        <option disabled value="1">Jack</option>
+        <option selected value="2">Jun</option>
+        <option value="3">C</option>
+    </select>
+    <input type="submit" value="提交">
+</form>
+
+<select class="mySelect">
+    <option value="1">C</option>
+    <option selected value="2">Z</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+    <option value="3">W</option>
+</select>
+
+
+<h1>下面这两个是没有被美化的组件</h1>
+
+<select>
+    <option value="1">Jack</option>
+    <option selected value="2">Jun</option>
+    <option value="3">C</option>
+</select>
+
+<select>
+    <option value="1">C</option>
+    <option selected value="2">Z</option>
+    <option value="3">W</option>
+</select>
+</body>
+</html>
+
+<h1>以上两个美化后组件的支持性能</h1>
+<h4>第一个select组件的代码</h4>
+<pre>
+&lt;select class="mySelect"&gt;
+    &lt;option disabled value="1"&gt;Jack&lt;/option&gt;
+    &lt;option selected value="2"&gt;Jun&lt;/option&gt;
+    &lt;option value="3"&gt;C&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+<h4>
+    让我们尝试修改select的value
+</h4>
+document.querySelector('.mySelect')._value=3
+<button type="button" onclick="changeValue()">实现代码</button><br><br>
+当你点击了上面这个按钮,会发现第一个UI-Select框的选项被改变了
+<br>同理获取value document.querySelector('.mySelect').value 同样可行
+<h4>
+    让我们尝试绑定select的onchange Event
+</h4>
+<pre>
+document.querySelector('.mySelect').onchange = function (value, displayHTML) {
+    console.log("Change!");
+    console.log(value, displayHTML)
+}
+</pre>
+<button type="button" onclick="changeEvent()">实现代码</button><br><br>
+当你点击了上面这个按钮,再去改变第一个select UI ,观察控制台输出 <br>
+onchange 接受两个参数 (value,displayHTML)
+<script>
+    let a = new JSelect('.mySelect');
+
+    function changeValue() {
+        document.querySelector('.mySelect')._value = 3
+    }
+
+    function changeEvent() {
+        document.querySelector('.mySelect').onchange = function (value, displayHTML) {
+            console.log("Change!");
+            console.log(value, displayHTML)
+        }
+    }
+</script>
