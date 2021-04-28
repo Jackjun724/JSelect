@@ -31,4 +31,4 @@ render :重新渲染select 组件， 适用于select组件被动态更新后重�
 
 > 想支持作者请Star！不胜感激！
 
-> By:Jack     E-mail:jackjun0724@gamil.com
+> By:Jack     E-mail:jackjun0724@gmail.com
